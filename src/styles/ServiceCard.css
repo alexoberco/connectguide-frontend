@@ -1,0 +1,49 @@
+.service-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;  /* Espaciado entre tarjetas */
+  }
+  
+  .service-card img {
+    width: 120px; /* Ajustar según sea necesario */
+    height: auto;
+    margin-right: 30px;
+  }
+  
+  .service-info {
+    flex-grow: 1;  /* Permite que el contenedor de información se expanda para usar el espacio disponible */
+    padding-right: 20px; /* Espacio adicional a la derecha para evitar que los textos se peguen */
+  }
+  
+  .service-info strong {
+    display: block; /* Hace que el nombre del servicio ocupe su propia línea */
+    margin-bottom: 5px; /* Espacio debajo del nombre del servicio */
+  }
+  .icon-container {
+    display: flex;
+    gap: 10px; /* Espacio entre íconos */
+  }
+  
+  .icon-container img {
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 5px;
+  }
+  
+  .icon-button:hover {
+    background-color: #f0f0f0;
+  }
+  

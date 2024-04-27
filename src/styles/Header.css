@@ -1,0 +1,33 @@
+/* Header.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.navbar .nav-link {
+    text-decoration: none;
+    color: white; /* Cambiar el color del texto a blanco */
+    background-color: #4CAF50; /* Color de fondo verde */
+    margin-right: 10px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+
+
+.navbar .right-section .brand {
+    font-size: 1.5em;
+    color: #68A4FF; /* Color del logo o título */
+    text-align: right; /* Alinear el título a la derecha */
+}
+
+.navbar .nav-link:hover {
+    background-color: #1677D0; /* Cambio de color al pasar el mouse */
+    color: white; /* Mantiene el texto en blanco cuando se pasa el mouse */
+}
