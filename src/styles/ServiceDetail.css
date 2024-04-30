@@ -1,0 +1,30 @@
+.service-detail-view {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .service-detail-view h1 {
+    color: #333;
+  }
+  
+  .service-detail-view p {
+    margin-bottom: 10px;
+  }
+  
+  .service-detail-view button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .service-detail-view button:hover {
+    background-color: #367C39;
+  }
+  

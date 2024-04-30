@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import '../styles/AgregarServicio.css'; // Asegúrate de tener este archivo de estilos
+import '../styles/AgregarServicio.css'; 
+import SelectGuideModal from './SelectGuideModal';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function AgregarServicio() {
+  const navigate = useNavigate();
   const [serviceData, setServiceData] = useState({
     nombre: '',
     descripcion: '',
@@ -12,6 +17,12 @@ function AgregarServicio() {
     guia: '',
     imagen: null
   });
+
+  const [showModal, setShowModal] = useState(false);
+  const [guides] = useState([
+    { id: 1, nombre: 'John Doe', username: 'johndoe' },
+    { id: 2, nombre: 'Jane Smith', username: 'janesmith' }
+  ]); // Esto debería venir de la API en el futuro
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -28,10 +39,21 @@ function AgregarServicio() {
     }));
   };
 
+
+  const handleSelectGuide = (guide) => {
+    setServiceData(prevState => ({
+      ...prevState,
+      guia: `${guide.nombre} (${guide.username})`
+    }));
+    setShowModal(false); // Cierra el modal después de seleccionar un guía
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Aquí manejarías el envío del formulario a tu backend
+    // Aquí se maneja el envío del formulario a el backend
     console.log(serviceData);
+    // Simular envío exitoso y redirección
+    navigate('/services');
   };
 
   return (
@@ -64,7 +86,7 @@ function AgregarServicio() {
         </label>
         <label>
           Guía (opcional):
-          <input type="text" name="guia" value={serviceData.guia} onChange={handleInputChange} />
+          <input type="text" name="guia" value={serviceData.guia} onClick={() => setShowModal(true)} readOnly />
         </label>
         <label>
           Imagen:
@@ -72,6 +94,7 @@ function AgregarServicio() {
         </label>
         <button type="submit">Agregar Servicio</button>
       </form>
+      {showModal && <SelectGuideModal guides={guides} onSelect={handleSelectGuide} onClose={() => setShowModal(false)} />}
     </div>
   );
 }

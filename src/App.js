@@ -5,6 +5,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import ServicesView from './components/ServicesView';
 import AgregarServicio from './components/AgregarServicio'; 
+import ServiceDetail from './components/ServiceDetail';
 import './styles/App.css'; 
 
 function App() {
@@ -18,9 +19,12 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/services" element={<ServicesView userRole='operador' />} />
         <Route path="/add-service" element={<AgregarServicio />} />
+        <Route path="/service/:serviceId" element={<ServiceDetail />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
